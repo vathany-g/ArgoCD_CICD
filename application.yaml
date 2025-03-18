@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: thila-app
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/vathany-g/ArgoCD_CICD.git"
+    targetRevision: main
+    path: <path_to_manifest_directory>
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: thila-ns
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
