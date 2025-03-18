@@ -7,7 +7,7 @@ spec:
   source:
     repoURL: "https://github.com/vathany-g/ArgoCD_CICD.git"
     targetRevision: main
-    path: <path_to_manifest_directory>
+    path: "."
   destination:
     server: https://kubernetes.default.svc
     namespace: thila-ns
